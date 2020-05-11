@@ -39,17 +39,7 @@ promoPopupClose.addEventListener('click', e => {
     promoPopup.style.display = 'none';
 });
 
-const appleLink = document.getElementById('apple_link');
-appleLink.addEventListener('click', e => {
-    ga('send', 'event', 'link promo', 'app');
-    window.open('https://apps.apple.com/us/app/fluid-simulation/id1443124993');
-});
 
-const googleLink = document.getElementById('google_link');
-googleLink.addEventListener('click', e => {
-    ga('send', 'event', 'link promo', 'app');
-    window.open('https://play.google.com/store/apps/details?id=games.paveldogreat.fluidsimfree');
-});
 
 // Simulation code
 
@@ -276,13 +266,10 @@ function startGUI () {
     app.domElement.parentElement.appendChild(appIcon);
     appIcon.className = 'icon app';
 
-    if (isMobile())
-        gui.close();
+    
 }
 
-function isMobile () {
-    return /Mobi|Android/i.test(navigator.userAgent);
-}
+
 
 function captureScreenshot () {
     let res = getResolution(config.CAPTURE_RESOLUTION);
